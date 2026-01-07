@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barrierefreiheitserklärung - EduSphere</title>
+    <style>
+        html {
+            scroll-padding-top: 100px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        header nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        header .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        header .brand-link {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        header .logo {
+            width: 36px;
+            height: 36px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        header .brand-text {
+            font-size: 1.15rem;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            transition: opacity 0.3s;
+        }
+
+        header a:hover {
+            opacity: 0.8;
+        }
+
+        .cart-icon {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.5rem;
+            position: relative;
+            padding: 0;
+            transition: opacity 0.3s;
+        }
+
+        .cart-icon:hover,
+        .cart-icon:focus {
+            opacity: 0.8;
+            outline: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 4px;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem 4rem;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: #667eea;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        ul, ol {
+            margin-bottom: 1rem;
+            margin-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .compliance-status {
+            background: #f0f8ff;
+            border-left: 4px solid #667eea;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .contact-info {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .contact-info strong {
+            color: #667eea;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            z-index: 101;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        button:focus-visible,
+        a:focus-visible {
+            outline: 3px solid #ff0000;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+    <header>
+        <nav>
+            <div class="brand">
+                <a class="brand-link" href="index.html">
+                    <img class="logo" src="images/image 4.png" alt="EduSphere logo">
+                    <span class="brand-text">EduSphere</span>
+                </a>
+            </div>
+            <div>
+                <a href="überuns.html">Über uns</a>
+                <a href="features.html">Features</a>
+                <a href="lizenz.html">Lizenz</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <button class="cart-icon" onclick="location.href='warenkorb.html'" aria-label="Warenkorb">
+                    🛒
+                    <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="container">
+        <h1>Barrierefreiheitserklärung</h1>
+        
+        <p>
+            EduSphere möchte die eigene Website so Barrierefrei wie möglich gestalten. In der folgenden Barrierefreiheitserklärung listen wir aktuelle Probleme mit der Seite, 
+            durchgeführte Tests und den Status diverser Compliance Programme auf.
+        </p>
+
+        <h2>Compliance-Status</h2>
+        <div class="compliance-status">
+            <p>
+                <strong>Konformitätsstufe:</strong> WCAG 2.2 Level AA (teilweise konform)
+            </p>
+            <p>
+                Die Website wurde so gestaltet, dass sie den Richtlinien für barrierefreie Webinhalte (WCAG) 2.2 auf
+                Stufe AA entspricht. Wir verpflichten uns, die Barrierefreiheit kontinuierlich zu verbessern und alle
+                bekannten Probleme zu beheben.
+            </p>
+        </div>
+
+        <h2>Implementierte Barrierefreiheitsmaßnahmen</h2>
+        <ul>
+            <li><strong>Tastaturnavigation:</strong> Alle Funktionen sind vollständig über Tastatur erreichbar. Der Tab-Schlüssel navigiert durch alle interaktiven Elemente.</li>
+            <li><strong>Skip-Link:</strong> Ein "Zum Hauptinhalt springen"-Link ermöglicht schnelle Navigation zum Seiteninhalt.</li>
+            <li><strong>Fokusanzeige:</strong> Alle fokussierbaren Elemente haben deutlich sichtbare Fokusindikatoren (rote oder blaue Umrandung).</li>
+            <li><strong>Semantische HTML:</strong> Die Website verwendet korrektes semantisches Markup (header, nav, main, footer).</li>
+            <li><strong>Alt-Text:</strong> Alle Bilder haben beschreibende Alt-Texte für Screenreader.</li>
+            <li><strong>Farbkontrast:</strong> Text hat ausreichende Kontrastierung (mindestens 4.5:1 für normale Texte).</li>
+            <li><strong>Formularbarrierefreiheit:</strong> Alle Formularfelder haben explizite Labels und hilfreiche Fehlermeldungen.</li>
+            <li><strong>Responsive Design:</strong> Die Website funktioniert auf allen Geräten und Bildschirmgrößen.</li>
+            <li><strong>Schriftgrößen:</strong> Text kann ohne Verlust der Funktionalität bis 200% vergrößert werden.</li>
+            <li><strong>ARIA-Labels:</strong> Interaktive Elemente haben ARIA-Labels für Screenreader-Benutzer.</li>
+        </ul>
+
+        <h2>Bekannte Barrierefreiheitsprobleme</h2>
+        <p>
+            Wir bemühen uns, die Website vollständig barrierefrei zu machen. Falls Sie auf Barrierefreiheitsprobleme
+            stoßen, bitten wir Sie, uns zu benachrichtigen. Die folgenden Probleme sind uns derzeit bekannt:
+        </p>
+        <ul>
+            <li>Einige Gradient-Hintergründe könnten für Benutzer mit Farbsehhindernissen schwieriger zu unterscheiden sein. Wir haben uns aber dennoch dazu entschieden diese zu implementieren, da diese nur einen kleinen Teil unserer Website ausmachen. Die wichtigen Elemente sind frei von solchen Gradients.</li>
+        </ul>
+
+        <h2>Technologie und Standards</h2>
+        <ul>
+            <li>HTML5</li>
+            <li>CSS</li>
+            <li>WAI-ARIA</li>
+            <li>WCAG 2.2 Level AA</li>
+        </ul>
+
+        <h2>Unterstützung für Benutzer mit Beeinträchtigungen</h2>
+        <h3>Screenreader</h3>
+        <p>
+            Die Website ist mit gängigen Screenreadern kompatibel
+        </p>
+
+        <h3>Tastaturnavigation</h3>
+        <p>
+            Alle Funktionen sind mit folgenden Tasten zugänglich:
+        </p>
+        <ul>
+            <li><strong>Tab:</strong> Zum nächsten fokussierbaren Element</li>
+            <li><strong>Shift+Tab:</strong> Zum vorherigen fokussierbaren Element</li>
+            <li><strong>Enter/Space:</strong> Zum Aktivieren von Buttons und Links</li>
+        </ul>
+
+        <h3>Zoomfunktion</h3>
+        <p>
+            Die Website bleibt bei einer Zoomvergrößerung von bis zu 200% voll funktionsfähig. Sie können den Zoom
+            im Browser mit Strg++ (Ctrl++) oder über die Browsereinstellungen anpassen.
+        </p>
+
+        <h2>Rückmeldungen und Kontakt</h2>
+        <div class="contact-info">
+            <p>
+                Wenn Sie Probleme mit der Barrierefreiheit dieser Website feststellen, wenden Sie sich bitte direkt an uns:
+            </p>
+            <p>
+                <strong>E-Mail:</strong> <a href="mailto:accessibility@edusphere.at">accessibility@edusphere.at</a><br>
+                <strong>Telefon:</strong> +43 (0) 1 234 5678<br>
+                <strong>Adresse:</strong> EduSphere Street 1, 1010 Wien, Österreich
+            </p>
+        </div>
+
+        <h2>Zertifizierung und Überprüfung</h2>
+        <p>
+            Diese Website wurde mit automatisierten Accessibility-Tools getestet, darunter:
+        </p>
+        <ul>
+            <li>axe DevTools für automatisierte Accessibility-Überprüfungen</li>
+            <li>Tastaturnavigations-Tests</li>
+            <li>Kontrastprüfungen</li>
+        </ul>
+        <p>
+            Diese Barrierefreiheitserklärung wird regelmäßig überprüft und aktualisiert. Zuletzt aktualisiert am
+            <strong>7. Januar 2026</strong>.
+        </p>
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2026 EduSphere. Alle Rechte vorbehalten. |
+            <a href="impressum.html">Impressum</a> |
+            <a href="barrierefreiheit.html">Barrierefreiheit</a> |
+            <a href="datenschutz.html">Datenschutz</a>
+        </p>
+    </footer>
+</body>
+
+</html>

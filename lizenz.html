@@ -47,6 +47,24 @@
             margin: 0 1rem;
         }
 
+        .cart-icon {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.5rem;
+            position: relative;
+            padding: 0;
+            transition: opacity 0.3s;
+        }
+
+        .cart-icon:hover,
+        .cart-icon:focus {
+            opacity: 0.8;
+            outline: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 4px;
+        }
+
         header .brand {
             display: flex;
             align-items: center;
@@ -70,6 +88,22 @@
 
         header .brand-text {
             font-size: 1.15rem;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
         }
 
         .container {
@@ -104,7 +138,7 @@
         }
 
         .btn {
-            background: #667eea;
+            background: #3f4e93;
             color: white;
             padding: 0.7rem 1.2rem;
             border: none;
@@ -119,10 +153,32 @@
             padding: 2rem;
             margin-top: 2rem;
         }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            z-index: 101;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        button:focus-visible,
+        a:focus-visible {
+            outline: 3px solid #ff0000;
+            outline-offset: 2px;
+        }
     </style>
     html { scroll-padding-top: 100px; }
 
 <body>
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
     <header>
         <nav>
             <div class="brand">
@@ -137,15 +193,15 @@
                 <a href="lizenz.html">Lizenz</a>
                 <a href="kontakt.html">Kontakt</a>
                 <a href="datenschutz.html">Datenschutz</a>
-                <span class="cart-icon" onclick="location.href='warenkorb.html'">
+                <button class="cart-icon" onclick="location.href='warenkorb.html'" aria-label="Warenkorb">
                     🛒
                     <span class="cart-badge" id="cartCount">0</span>
-                </span>
+                </button>
             </div>
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container" id="main-content">
         <h1>Lizenzierung & Verkaufsrechte</h1>
         <p>Im Folgenden finden Sie eine Übersicht der Rechte, die mit dem Kauf unserer Softwarepakete übertragen werden.
             Wenn Sie spezielle Klauseln oder Nutzungsfälle haben, kontaktieren Sie uns bitte für ein individuelles
@@ -154,20 +210,18 @@
         <div class="package">
             <h3>Minimal Paket</h3>
             <ul class="rights">
-                <li><strong>Nutzungsrecht:</strong> Unbefristete, nicht-exklusive Lizenz für die gekaufte Organisation
+                <li><strong>Nutzungsrecht:</strong> Befristete, nicht-exklusive Lizenz für die gekaufte Organisation
                     (Standort- oder Unternehmenslizenz, je nach Vertrag).</li>
-                <li><strong>Anwenderanzahl:</strong> Unbegrenzte Nutzer innerhalb des lizenzierten
-                    Unternehmens/Standorts (sofern vertraglich vereinbart).</li>
-                <li><strong>Updates & Wartung:</strong> Alle Major- und Minor-Updates sowie Sicherheits-Patches während
-                    der Vertragslaufzeit und für die vereinbarte Laufzeit danach inklusive.</li>
-                <li><strong>Support:</strong> 24/7-Prioritäts-Support (Telefon & E-Mail), SLA mit Reaktionszeiten und
-                    Eskalationsstufen.</li>
-                <li><strong>Anpassungen:</strong> Inklusivstunden für kundenspezifische Anpassungen (Anzahl und Rahmen
-                    im Vertrag).</li>
-                <li><strong>Quellcode:</strong> Der Quellcode wird nicht standardmäßig übertragen; individuelle
-                    Vereinbarungen möglich gegen Aufpreis und NDA.</li>
-                <li><strong>Weitergabe & Übertragung:</strong> Übertragung der Lizenz an Rechtsnachfolger oder bei
-                    Firmenübernahmen möglich nach Absprache.</li>
+                <li><strong>Anwenderanzahl:</strong> Begrenzte Nutzerzahl (im Vertrag festgelegt) innerhalb der
+                    Organisation/Schule.</li>
+                <li><strong>Updates & Wartung:</strong> Alle Updates und Patches während
+                    der Vertragslaufzeit inklusive.</li>
+                <li><strong>Support:</strong> 24/7 Telefon-Support und ggf. technischer Support vor Ort (es obliegt
+                    unserem Unternehmen das zu entschieden).</li>
+                <li><strong>Anpassungen:</strong> Keine kundenspezifischen Anpassungen nach dem Deployment.</li>
+                <li><strong>Quellcode:</strong> Der Quellcode wird nicht weitergegeben.</li>
+                <li><strong>Haftung:</strong> Wir haften für unsere Software nur beschränkt. Eine Haftungssumme wird
+                    individuell in jedem Vertrag vereinbart.</li>
             </ul>
             <button class="btn" onclick="location.href='warenkorb.html'">zum Warenkorb</button>
 
@@ -177,17 +231,18 @@
             <h3>Standard Paket</h3>
             <ul class="rights">
                 <li><strong>Nutzungsrecht:</strong> Unbefristete, nicht-exklusive Lizenz für die gekaufte Organisation
-                    (eingeschränkte Nutzeranzahl).</li>
-                <li><strong>Anwenderanzahl:</strong> Lizenz für eine definierte Anzahl an Nutzern oder pro Standort, wie
+                    .</li>
+                <li><strong>Anwenderanzahl:</strong> Lizenz für eine undefinierte Anzahl an Nutzern aber pro Standort,
+                    wie
                     im Vertrag festgelegt.</li>
-                <li><strong>Updates & Wartung:</strong> Sicherheitsupdates und Minor-Updates für 12 Monate inklusive;
-                    Optionen zur Verlängerung vorhanden.</li>
-                <li><strong>Support:</strong> Support während der Geschäftszeiten (Mo–Fr), Reaktionszeit gemäß
-                    Standard-SLA.</li>
-                <li><strong>Anpassungen:</strong> Keine oder nur sehr begrenzte kundenspezifische Anpassungen; auf
-                    Anfrage gegen Aufpreis.</li>
-                <li><strong>Quellcode:</strong> Nicht im Lieferumfang enthalten.</li>
-                <li><strong>Weitergabe & Übertragung:</strong> Nicht übertragbar ohne schriftliche Zustimmung.</li>
+                <li><strong>Updates & Wartung:</strong> Updates und Patches während der Vertragslaufzeit inklusive.</li>
+                <li><strong>Support:</strong> 24/7 Telefon-Support und ggf. Technischer Support vor Ort (es obliegt
+                    unserem Unternehmen das zu entschieden).</li>
+                <li><strong>Anpassungen:</strong> Nach dem Deployment sind Anpassungen nur gegen Aufpreis und nach
+                    Absprache möglich.</li>
+                <li><strong>Quellcode:</strong> Der Quellcode wird nicht weitergegeben.</li>
+                <li><strong>Haftung:</strong> Wir haften für unsere Software nur beschränkt. Eine Haftungssumme wird
+                    individuell in jedem Vertrag vereinbart.</li>
             </ul>
             <button class="btn" onclick="location.href='warenkorb.html'">zum Warenkorb</button>
         </div>
@@ -195,15 +250,19 @@
         <div class="package">
             <h3>Komplett Paket</h3>
             <ul class="rights">
-                <li><strong>Nutzungsrecht:</strong> Einfache, nicht-exklusive Nutzungsberechtigung für einen einzelnen
-                    Standort oder eine geringe Nutzeranzahl.</li>
-                <li><strong>Anwenderanzahl:</strong> Begrenzte Nutzerzahl, wie im Kaufvertrag angegeben.</li>
-                <li><strong>Updates & Wartung:</strong> Sicherheits-Patches für 3 Monate inklusive; weitere Wartung
-                    kostenpflichtig.</li>
-                <li><strong>Support:</strong> Community- oder E-Mail-Support mit längeren Reaktionszeiten.</li>
-                <li><strong>Anpassungen:</strong> Keine kundenspezifischen Anpassungen enthalten.</li>
-                <li><strong>Quellcode:</strong> Nicht im Lieferumfang enthalten.</li>
-                <li><strong>Weitergabe & Übertragung:</strong> Nicht übertragbar.</li>
+                <li><strong>Nutzungsrecht:</strong> Unbefristete, nicht-exklusive Lizenz für die gekaufte Organisation.
+                </li>
+                <li><strong>Anwenderanzahl:</strong> Lizenz für eine undefinierte Anzahl an Nutzern für bis zu 3
+                    Standorte, im Vertrag genauer festgelegt.</li>
+                <li><strong>Updates & Wartung:</strong> Updates und Patches während der Vertragslaufzeit inklusive.</li>
+                <li><strong>Support:</strong> 24/7 Priorisierter Telefon-Support und priorisierter Technischer Support
+                    vor Ort (es obliegt
+                    unserem Unternehmen das zu entschieden).</li>
+                <li><strong>Anpassungen:</strong> Nach dem Deployment sind Anpassungen gegen Aufpreis mit Prioritäts
+                    Behandlung möglich.</li>
+                <li><strong>Quellcode:</strong> Der Quellcode wird nicht weitergegeben.</li>
+                <li><strong>Haftung:</strong> Wir haften für unsere Software nur beschränkt. Eine Haftungssumme wird
+                    individuell in jedem Vertrag vereinbart.</li>
             </ul>
             <button class="btn" onclick="location.href='warenkorb.html'">zum Warenkorb</button>
         </div>
@@ -214,7 +273,10 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 EduSphere. Alle Rechte vorbehalten.</p>
+        <p>&copy; 2026 EduSphere. Alle Rechte vorbehalten. | <a href="impressum.html"
+                style="color: #667eea; text-decoration: none;">Impressum</a> | <a href="barrierefreiheit.html"
+                style="color: #667eea; text-decoration: none;">Barrierefreiheit</a> | <a href="datenschutz.html"
+                style="color: #667eea; text-decoration: none;">Datenschutz</a></p>
     </footer>
 </body>
 

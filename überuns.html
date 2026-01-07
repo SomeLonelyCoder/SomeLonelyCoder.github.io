@@ -86,6 +86,40 @@
             opacity: 0.8;
         }
 
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .cart-icon {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.5rem;
+            position: relative;
+            padding: 0;
+            transition: opacity 0.3s;
+        }
+
+        .cart-icon:hover,
+        .cart-icon:focus {
+            opacity: 0.8;
+            outline: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 4px;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -111,10 +145,32 @@
             padding: 2rem;
             margin-top: 3rem;
         }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            z-index: 101;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        button:focus-visible,
+        a:focus-visible {
+            outline: 3px solid #ff0000;
+            outline-offset: 2px;
+        }
     </style>
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
     <header>
         <nav>
             <div class="brand">
@@ -129,15 +185,15 @@
                 <a href="lizenz.html">Lizenz</a>
                 <a href="kontakt.html">Kontakt</a>
                 <a href="datenschutz.html">Datenschutz</a>
-                <span class="cart-icon" onclick="location.href='warenkorb.html'">
+                <button class="cart-icon" onclick="location.href='warenkorb.html'" aria-label="Warenkorb">
                     🛒
                     <span class="cart-badge" id="cartCount">0</span>
-                </span>
+                </button>
             </div>
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container" id="main-content">
         <section class="section" id="überuns">
             <h3>Über EduSphere</h3>
             <p>Seit unserer Gründung in Österreich 2026 bieten wir die beste Software für Ihre Schule. Unser Unternehmen
@@ -149,12 +205,14 @@
         <section class="section" id="überuns">
             <h3>Unsere Marken</h3>
             <h4>Der Name EduSphere</h4>
-            <p>Unser Unternehmensname ist eine einzigartige und eingetragene Wortmarke. Der Name ist für die
-                Nizzaklassen 9, 41 und 42 eingetragen. </p>
-            <h4></h4>
-            <p>Unser Unternehmensname ist eine einzigartige und eingetragene Wortmarke. Der Name ist für die
-                Nizzaklassen 9, 1 und 42 eingetragen. </p>
-        </section>
+            <p>Unser Unternehmensname ist eine einzigartige und eingetragene Wortmarke.</p>
+            <h4>Unser Logo</h4>
+            <p>Ein Logo ist einzigartig und muss das auch bleiben. Daher haben wir unser Logo schützen lassen.</p>
+            <h4>Unsere Farbe</h4>
+            <p>Eine Farbe steht wie ein Unternehmensname für einzigartiges Unternehmen. Unsere Farbe #667eea ist für
+                unser Unternehmen einzigartig und daher geschützt.</p>
+            <p><strong> Unsere Marken sind alle für die Nizzaklassen 9, 41 und 42 eingetragen.</strong></p>
+        </section>  
     </div>
     <div class="container">
         <section class="section" id="überuns">
@@ -163,12 +221,22 @@
             <p>Die Bildrechte an dieser Österreichflagge liegen bei Adobe Stock und AkshayG. Adobe Stock hat dieses Bild
                 über eine Bildungslizenz an uns lizensiert.</p>
             <h4>Unser Logo</h4>
-            <p>Unser Logo ist von Googles Gemini KI mit dem Modell Nano Banana Pro generiert worden und nicht geschützt.
-                Es gibt kein ähnliches geschütztes Logo, daher können wir dieses frei verwenden.</p>
+            <p>Unser Logo ist von Googles Gemini KI mit dem Modell Nano Banana Pro generiert worden und damit nicht
+                geschützt.
+                Es gibt kein ähnliches geschütztes Logo, daher können wir dieses frei verwenden. Wir haben dieses Logo
+                danach selber maßgeblich in Adobe Photoshop verändert. Sowohl die Farben als auch die Formen wurden
+                verändert. Dieses neue Logo haben wir schützen lassen.</p>
+            <h4>Unsere Datenschutzerklärung</h4>
+            <p>Unsere Datenschutzerklärung wurde von AdSimple lizensiert und ist damit für unsere Domain ohne Lizenz
+                nutzbar. Wir besitzen nicht das Recht diese auf einer zweiten Domain zu veröffentlichen
+                oder anderweitig zu verbreiten.</p>
         </section>
     </div>
     <footer>
-        <p>&copy; 2026 EduSphere. All rights reserved.</p>
+        <p>&copy; 2026 EduSphere. All rights reserved. | <a href="impressum.html"
+                style="color: #667eea; text-decoration: none;">Impressum</a> | <a href="barrierefreiheit.html"
+                style="color: #667eea; text-decoration: none;">Barrierefreiheit</a> | <a href="datenschutz.html"
+                style="color: #667eea; text-decoration: none;">Datenschutz</a></p>
     </footer>
 </body>
 
